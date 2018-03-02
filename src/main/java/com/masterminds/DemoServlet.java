@@ -19,7 +19,8 @@ public class DemoServlet extends HttpServlet {
     resp.setContentType("text/plain");
 
     try (final PrintWriter writer = resp.getWriter()) {
-      writer.println("{ \"name\": \"Masterminds World!\" }");
+      writer.println("{ \"name\": \"MasterMinds!\" }");
+      log.info("Get request handled.");
     } catch (final Exception e) {
       log.error("{}", e.getMessage(), e);
     }
