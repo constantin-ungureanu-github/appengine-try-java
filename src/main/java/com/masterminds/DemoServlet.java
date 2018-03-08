@@ -27,18 +27,17 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class DemoServlet extends HttpServlet {
-  private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-  @Override
-  public void doGet(final HttpServletRequest req, final HttpServletResponse resp)
-      throws IOException {
-    resp.setContentType("text/plain");
+    @Override
+    public void doGet(final HttpServletRequest req, final HttpServletResponse resp) throws IOException {
+        resp.setContentType("text/plain");
 
-    try (final PrintWriter writer = resp.getWriter()) {
-      writer.println("{ \"name\": \"MasterMinds!\" }");
-      log.info("Get request handled.");
-    } catch (final Exception e) {
-      log.error("{}", e.getMessage(), e);
+        try (final PrintWriter writer = resp.getWriter()) {
+            writer.println("{ \"name\": \"MasterMinds!\" }");
+            log.info("Get request handled.");
+        } catch (final Exception e) {
+            log.error("{}", e.getMessage(), e);
+        }
     }
-  }
 }
