@@ -27,20 +27,23 @@
 
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+        <maven.compiler.failOnWarning>true</maven.compiler.failOnWarning>
 
         <!-- Maven -->
-        <version.maven.clean.plugin>3.0.0</version.maven.clean.plugin>
-        <version.maven.compiler.plugin>3.7.0</version.maven.compiler.plugin>
-        <version.maven.dependency.plugin>3.0.2</version.maven.dependency.plugin>
-        <version.maven.resources.plugin>3.0.2</version.maven.resources.plugin>
-        <version.maven.war.plugin>3.2.0</version.maven.war.plugin>
-        <version.maven.surefire.plugin>2.20.1</version.maven.surefire.plugin>
-        <version.maven.failsafe.plugin>2.20.1</version.maven.failsafe.plugin>
-        <version.maven.jacoco.plugin>0.8.0</version.maven.jacoco.plugin>
-        <version.maven.checkstyle.plugin>3.0.0</version.maven.checkstyle.plugin>
-        <version.maven.install.plugin>2.5.2</version.maven.install.plugin>
-        <version.maven.source.plugin>3.0.1</version.maven.source.plugin>
-        <version.maven.javadoc.plugin>3.0.0</version.maven.javadoc.plugin>
+        <version.maven.clean>3.0.0</version.maven.clean>
+        <version.maven.compiler>3.7.0</version.maven.compiler>
+        <version.maven.dependency>3.0.2</version.maven.dependency>
+        <version.maven.resources>3.0.2</version.maven.resources>
+        <version.maven.war>3.2.0</version.maven.war>
+        <version.maven.surefire>2.20.1</version.maven.surefire>
+        <version.maven.failsafe>2.20.1</version.maven.failsafe>
+        <version.maven.jacoco>0.8.0</version.maven.jacoco>
+        <version.maven.checkstyle>3.0.0</version.maven.checkstyle>
+        <version.maven.install>2.5.2</version.maven.install>
+        <version.maven.source>3.0.1</version.maven.source>
+        <version.maven.javadoc>3.0.0</version.maven.javadoc>
         <version.maven.appengine>1.3.2</version.maven.appengine>
 
         <!-- Dependencies -->
@@ -172,42 +175,42 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
-                <version>${version.maven.clean.plugin}</version>
+                <version>${version.maven.clean}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.maven.compiler.plugin}</version>
+                <version>${version.maven.compiler}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>${version.maven.resources.plugin}</version>
+                <version>${version.maven.resources}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>${version.maven.dependency.plugin}</version>
+                <version>${version.maven.dependency}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${version.maven.surefire.plugin}</version>
+                <version>${version.maven.surefire}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>${version.maven.failsafe.plugin}</version>
+                <version>${version.maven.failsafe}</version>
             </plugin>
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${version.maven.jacoco.plugin}</version>
+                <version>${version.maven.jacoco}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${version.maven.checkstyle.plugin}</version>
+                <version>${version.maven.checkstyle}</version>
                 <dependencies>
                     <dependency>
                         <groupId>com.puppycrawl.tools</groupId>
@@ -237,22 +240,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>${version.maven.install.plugin}</version>
+                <version>${version.maven.install}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${version.maven.source.plugin}</version>
+                <version>${version.maven.source}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version.maven.javadoc.plugin}</version>
+                <version>${version.maven.javadoc}</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>${version.maven.war.plugin}</version>
+                <version>${version.maven.war}</version>
                 <configuration>
                     <archiveClasses>true</archiveClasses>
                     <webResources>
