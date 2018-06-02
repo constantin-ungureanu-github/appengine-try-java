@@ -1,4 +1,4 @@
-# Hello Masterminds Google App Engine for Java™
+# Hello Google App Engine for Java™
 
 This sample shows you how to deploy a simple "Hello World" application to [Google App Engine](https://cloud.google.com/appengine/docs/java/).
 
