@@ -3,6 +3,8 @@ package com.example.appengine.java8;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
+import com.example.appengine.HelloAppEngine;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -17,8 +19,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import com.example.appengine.HelloAppEngine;
 
 @RunWith(JUnit4.class)
 public class HelloAppEngineTest {
