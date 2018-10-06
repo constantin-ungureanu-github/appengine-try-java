@@ -18,4 +18,4 @@ To run the application locally, run
 
 To deploy the application to Google AppEngine, run
 
-    mvn clean appengine:deploy
+    mvn clean package appengine:deploy

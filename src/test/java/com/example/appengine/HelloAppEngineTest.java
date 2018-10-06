@@ -1,9 +1,7 @@
-package com.example.appengine.java8;
+package com.example.appengine;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
-
-import com.example.appengine.HelloAppEngine;
 
 import java.io.IOException;
 import java.io.PrintWriter;
