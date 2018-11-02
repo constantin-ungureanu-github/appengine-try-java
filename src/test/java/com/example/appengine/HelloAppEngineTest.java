@@ -20,39 +20,38 @@ import org.mockito.MockitoAnnotations;
 
 @RunWith(JUnit4.class)
 public class HelloAppEngineTest {
-    private static final String FAKE_URL = "fake.fk/hello";
+  private static final String FAKE_URL = "fake.fk/hello";
 
-    @Mock
-    private HttpServletRequest mockRequest;
+  @Mock
+  private HttpServletRequest mockRequest;
 
-    @Mock
-    private HttpServletResponse mockResponse;
+  @Mock
+  private HttpServletResponse mockResponse;
 
+  private HelloAppEngine servlet;
 
-    private HelloAppEngine servlet;
+  @Before
+  public void setUp() throws Exception {
+    MockitoAnnotations.initMocks(this);
 
-    @Before
-    public void setUp() throws Exception {
-        MockitoAnnotations.initMocks(this);
+    servlet = new HelloAppEngine();
+  }
 
-        servlet = new HelloAppEngine();
-    }
+  @Test
+  public void doGetWritesResponse() throws IOException {
+    when(mockRequest.getRequestURI()).thenReturn(FAKE_URL);
+    final Writer responseWriter = new StringWriter();
+    when(mockResponse.getWriter()).thenReturn(new PrintWriter(responseWriter));
 
-    @Test
-    public void doGetWritesResponse() throws IOException {
-        when(mockRequest.getRequestURI()).thenReturn(FAKE_URL);
-        final Writer responseWriter = new StringWriter();
-        when(mockResponse.getWriter()).thenReturn(new PrintWriter(responseWriter));
+    servlet.doGet(mockRequest, mockResponse);
+    final String string = responseWriter.toString();
 
-        servlet.doGet(mockRequest, mockResponse);
-        final String string = responseWriter.toString();
+    assertThat(string).contains("Hello AppEngine");
+  }
 
-        assertThat(string).contains("Hello AppEngine");
-    }
-
-    @Test
-    public void helloInfoTest() {
-        final String result = HelloAppEngine.getInfo();
-        assertThat(result).containsSubsequence("Version: ", "OS: ", "User: ");
-    }
+  @Test
+  public void helloInfoTest() {
+    final String result = HelloAppEngine.getInfo();
+    assertThat(result).containsSubsequence("Version: ", "OS: ", "User: ");
+  }
 }
