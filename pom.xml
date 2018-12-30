@@ -9,11 +9,9 @@
   <packaging>war</packaging>
 
   <properties>
+    <java.version>11</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-    <java.version>11</java.version>
-
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
@@ -29,8 +27,8 @@
     <version.maven.dependency>3.1.1</version.maven.dependency>
     <version.maven.resources>3.1.0</version.maven.resources>
     <version.maven.war>3.2.2</version.maven.war>
-    <version.maven.surefire>3.0.0-M2</version.maven.surefire>
-    <version.maven.failsafe>3.0.0-M2</version.maven.failsafe>
+    <version.maven.surefire>3.0.0-M3</version.maven.surefire>
+    <version.maven.failsafe>3.0.0-M3</version.maven.failsafe>
     <version.maven.jacoco>0.8.2</version.maven.jacoco>
     <version.maven.checkstyle>3.0.0</version.maven.checkstyle>
     <version.maven.install>3.0.0-M1</version.maven.install>
@@ -38,30 +36,27 @@
     <version.maven.javadoc>3.0.1</version.maven.javadoc>
     <version.maven.deploy>3.0.0-M1</version.maven.deploy>
     <version.maven.site>3.7.1</version.maven.site>
-    <version.maven.appengine>2.0.0-rc2</version.maven.appengine>
+    <version.maven.appengine>2.0.0-rc4</version.maven.appengine>
 
     <!-- Dependencies -->
-    <version.appengine.app>1</version.appengine.app>
     <version.appengine.target>1.9.71</version.appengine.target>
-
     <version.javax.servlet>4.0.1</version.javax.servlet>
-    <version.jstl>1.2</version.jstl>
+    <version.lombok>1.18.4</version.lombok>
 
     <!-- Logging -->
     <version.slf4j>1.8.0-beta2</version.slf4j>
     <version.log4j>2.11.1</version.log4j>
 
     <!-- Testing -->
-    <version.junit>4.12</version.junit>
+    <version.junit>4.13-beta-1</version.junit>
     <version.mockito>2.23.4</version.mockito>
     <version.assertj>3.11.1</version.assertj>
     <version.hamcrest>2.1</version.hamcrest>
     <version.byte.buddy>1.9.6</version.byte.buddy>
     <version.objenesis>3.0.1</version.objenesis>
 
-    <!-- Auxiliary -->
-    <version.lombok>1.18.4</version.lombok>
-    <version.checkstyle>8.15</version.checkstyle>
+    <!-- Validation -->
+    <version.checkstyle>8.16</version.checkstyle>
   </properties>
 
   <dependencies>
@@ -78,9 +73,10 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>jstl</groupId>
-      <artifactId>jstl</artifactId>
-      <version>${version.jstl}</version>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${version.lombok}</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- Logging -->
@@ -141,6 +137,12 @@
       <scope>test</scope>
     </dependency>
     <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest</artifactId>
+      <version>${version.hamcrest}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
       <groupId>net.bytebuddy</groupId>
       <artifactId>byte-buddy</artifactId>
       <version>${version.byte.buddy}</version>
@@ -169,14 +171,6 @@
       <artifactId>appengine-api-stubs</artifactId>
       <version>${version.appengine.target}</version>
       <scope>test</scope>
-    </dependency>
-
-    <!-- Auxiliary -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>${version.lombok}</version>
-      <scope>provided</scope>
     </dependency>
   </dependencies>
 
@@ -307,6 +301,9 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>${version.maven.war}</version>
         <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
           <archiveClasses>true</archiveClasses>
           <webResources>
             <resource>
