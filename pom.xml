@@ -39,7 +39,7 @@
     <version.maven.appengine>2.0.0-rc6</version.maven.appengine>
 
     <!-- Dependencies -->
-    <version.appengine.target>1.9.73</version.appengine.target>
+    <version.appengine.target>1.9.74</version.appengine.target>
     <version.javax.servlet>4.0.1</version.javax.servlet>
     <version.lombok>1.18.6</version.lombok>
 
@@ -49,14 +49,14 @@
 
     <!-- Testing -->
     <version.junit>4.13-beta-2</version.junit>
-    <version.mockito>2.26.0</version.mockito>
+    <version.mockito>2.27.0</version.mockito>
     <version.assertj>3.12.2</version.assertj>
     <version.hamcrest>2.1</version.hamcrest>
     <version.byte.buddy>1.9.12</version.byte.buddy>
     <version.objenesis>3.0.1</version.objenesis>
 
     <!-- Validation -->
-    <version.checkstyle>8.19</version.checkstyle>
+    <version.checkstyle>8.20</version.checkstyle>
   </properties>
 
   <dependencies>
