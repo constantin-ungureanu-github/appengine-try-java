@@ -23,40 +23,40 @@
     <version.maven.versions>2.7</version.maven.versions>
     <version.maven.enforcer>3.0.0-M2</version.maven.enforcer>
     <version.maven.clean>3.1.0</version.maven.clean>
-    <version.maven.compiler>3.8.0</version.maven.compiler>
+    <version.maven.compiler>3.8.1</version.maven.compiler>
     <version.maven.dependency>3.1.1</version.maven.dependency>
     <version.maven.resources>3.1.0</version.maven.resources>
-    <version.maven.war>3.2.2</version.maven.war>
+    <version.maven.war>3.2.3</version.maven.war>
     <version.maven.surefire>3.0.0-M3</version.maven.surefire>
     <version.maven.failsafe>3.0.0-M3</version.maven.failsafe>
-    <version.maven.jacoco>0.8.3</version.maven.jacoco>
-    <version.maven.checkstyle>3.0.0</version.maven.checkstyle>
+    <version.maven.jacoco>0.8.4</version.maven.jacoco>
+    <version.maven.checkstyle>3.1.0</version.maven.checkstyle>
     <version.maven.install>3.0.0-M1</version.maven.install>
-    <version.maven.source>3.0.1</version.maven.source>
+    <version.maven.source>3.1.0</version.maven.source>
     <version.maven.javadoc>3.1.0</version.maven.javadoc>
     <version.maven.deploy>3.0.0-M1</version.maven.deploy>
     <version.maven.site>3.7.1</version.maven.site>
-    <version.maven.appengine>2.0.0-rc6</version.maven.appengine>
+    <version.maven.appengine>2.0.0</version.maven.appengine>
 
     <!-- Dependencies -->
-    <version.appengine.target>1.9.74</version.appengine.target>
+    <version.appengine.target>1.9.76</version.appengine.target>
     <version.javax.servlet>4.0.1</version.javax.servlet>
-    <version.lombok>1.18.6</version.lombok>
+    <version.lombok>1.18.8</version.lombok>
 
     <!-- Logging -->
-    <version.slf4j>1.8.0-beta4</version.slf4j>
-    <version.log4j>2.11.2</version.log4j>
+    <version.slf4j>2.0.0-alpha0</version.slf4j>
+    <version.log4j>2.12.0</version.log4j>
 
     <!-- Testing -->
-    <version.junit>4.13-beta-2</version.junit>
-    <version.mockito>2.27.0</version.mockito>
+    <version.junit>4.13-beta-3</version.junit>
+    <version.mockito>2.28.2</version.mockito>
     <version.assertj>3.12.2</version.assertj>
     <version.hamcrest>2.1</version.hamcrest>
-    <version.byte.buddy>1.9.12</version.byte.buddy>
+    <version.byte.buddy>1.9.13</version.byte.buddy>
     <version.objenesis>3.0.1</version.objenesis>
 
     <!-- Validation -->
-    <version.checkstyle>8.20</version.checkstyle>
+    <version.checkstyle>8.22</version.checkstyle>
   </properties>
 
   <dependencies>
@@ -235,6 +235,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
         <version>${version.maven.dependency}</version>
+        <executions>
+          <execution>
+            <id>copy</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/appengine-staging
+              </outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -328,10 +342,6 @@
         <groupId>com.google.cloud.tools</groupId>
         <artifactId>appengine-maven-plugin</artifactId>
         <version>${version.maven.appengine}</version>
-        <configuration>
-          <deploy.projectId>ID</deploy.projectId>
-          <deploy.version>APPENGINE_CONFIG</deploy.version>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.eclipse.m2e</groupId>

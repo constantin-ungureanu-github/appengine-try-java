@@ -1,4 +1,4 @@
-# Hello Google AppEngine for Java 8™
+# Hello Google AppEngine for Java 11™
 
 ## Before you begin
 
@@ -18,4 +18,4 @@ To run the application locally, run
 
 To deploy the application to Google AppEngine, run
 
-    mvn clean package appengine:deploy
+    mvn clean package appengine:deploy -Dapp.deploy.projectId=<ID> -Dapp.deploy.version=<VERSION>
