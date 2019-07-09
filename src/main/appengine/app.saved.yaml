@@ -1,0 +1,21 @@
+runtime: java11
+service: 'default'
+env_variables:
+  'DEFAULT_ENCODING': 'UTF-8'
+handlers:
+- url: /
+  script: unused
+  login: optional
+  secure: optional
+- url: /.*/
+  script: unused
+  login: optional
+  secure: optional
+- url: /_ah/.*
+  script: unused
+  login: optional
+  secure: optional
+- url: .*\.jsp
+  script: unused
+  login: optional
+  secure: optional
