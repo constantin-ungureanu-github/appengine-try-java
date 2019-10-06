@@ -211,7 +211,6 @@
             <goals>
               <goal>display-dependency-updates</goal>
               <goal>display-plugin-updates</goal>
-              <goal>force-releases</goal>
             </goals>
           </execution>
         </executions>
@@ -263,8 +262,8 @@
           </dependency>
         </dependencies>
         <configuration>
-          <configLocation>checkstyle/checkstyle.xml</configLocation>
-          <suppressionsLocation>checkstyle/suppressions.xml</suppressionsLocation>
+          <configLocation>${basedir}/checkstyle/checkstyle.xml</configLocation>
+          <suppressionsLocation>${basedir}/checkstyle/suppressions.xml</suppressionsLocation>
           <suppressionsFileExpression>checkstyle.suppressions.file</suppressionsFileExpression>
           <encoding>UTF-8</encoding>
           <consoleOutput>true</consoleOutput>
