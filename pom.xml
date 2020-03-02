@@ -30,33 +30,33 @@
     <version.maven.surefire>2.22.2</version.maven.surefire>
     <version.maven.failsafe>2.22.2</version.maven.failsafe>
     <version.maven.jacoco>0.8.5</version.maven.jacoco>
-    <version.maven.checkstyle>3.1.0</version.maven.checkstyle>
+    <version.maven.checkstyle>3.1.1</version.maven.checkstyle>
     <version.maven.install>3.0.0-M1</version.maven.install>
-    <version.maven.source>3.2.0</version.maven.source>
+    <version.maven.source>3.2.1</version.maven.source>
     <version.maven.javadoc>3.1.1</version.maven.javadoc>
     <version.maven.deploy>3.0.0-M1</version.maven.deploy>
     <version.maven.site>3.8.2</version.maven.site>
     <version.maven.appengine>2.2.0</version.maven.appengine>
 
     <!-- Dependencies -->
-    <version.appengine.target>1.9.77</version.appengine.target>
+    <version.appengine.target>1.9.78</version.appengine.target>
     <version.javax.servlet>4.0.1</version.javax.servlet>
-    <version.lombok>1.18.10</version.lombok>
+    <version.lombok>1.18.12</version.lombok>
 
     <!-- Logging -->
-    <version.slf4j>1.7.29</version.slf4j>
-    <version.log4j>2.12.1</version.log4j>
+    <version.slf4j>1.7.30</version.slf4j>
+    <version.log4j>2.13.1</version.log4j>
 
     <!-- Testing -->
-    <version.junit>4.12</version.junit>
-    <version.mockito>3.2.0</version.mockito>
-    <version.assertj>3.14.0</version.assertj>
+    <version.junit>4.13</version.junit>
+    <version.mockito>3.3.0</version.mockito>
+    <version.assertj>3.15.0</version.assertj>
     <version.hamcrest>2.2</version.hamcrest>
-    <version.byte.buddy>1.10.4</version.byte.buddy>
+    <version.byte.buddy>1.10.8</version.byte.buddy>
     <version.objenesis>3.1</version.objenesis>
 
     <!-- Validation -->
-    <version.checkstyle>8.27</version.checkstyle>
+    <version.checkstyle>8.30</version.checkstyle>
   </properties>
 
   <dependencies>
